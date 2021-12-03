@@ -1,8 +1,7 @@
 # from django.conf import settings
-from django.urls import include, path
+from django.urls import path
 # from django.conf.urls.static import static
-from django.contrib import admin
-
+from to_do_app.views import home
 # from .yasg import urlpatterns as dock_urls
 # from rest_framework_jwt.views import obtain_jwt_token
 # from rest_framework.routers import DefaultRouter
@@ -13,11 +12,8 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("api", include("to_do_api.urls")),
-    # path("api/accounts/", include("accounts.urls")),
+    path("", home)
     # path("api/comments/", include("comments.urls")),
-    path("", include("to_do_app.urls")),
 
     # path("api/auth/token/", obtain_jwt_token),
     # path("api/category/", include(router.urls)),
@@ -25,4 +21,5 @@ urlpatterns = [
     # path("api/schema/", schema_view),
     # path("api/docs/", include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),
     # path('swagger/', schema_view),
+
 ]
